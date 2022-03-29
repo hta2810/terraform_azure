@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+pr: none
+
+pool:
+  vmImage: windows-latest
+
+stages:
+  - stage: terraform_validate
+    displayName: terraform validate and init
+    jobs:
+      - job: 
+        steps:
+          - task: TerraformInstaller@0
+            inputs:
+              terraformVersion: 'latest'
+          - task: TerraformTaskV2@2
+            inputs:
+              provider: 'azurerm'
+              command: 'init'
+              backendServiceArm: 'Azure for Students(07511652-8939-424c-bedb-5cafb3b61347)'
+              backendAzureRmResourceGroupName: 'Resourcegroupteam2'
+              backendAzureRmStorageAccountName: 'team2adminandy01'
+              backendAzureRmContainerName: 'tfstate'
+              backendAzureRmKey: 'dev-tfstate'
+              commandOptions: '-var-file="non-modules/values.tfvars"'
