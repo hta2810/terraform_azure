@@ -1,4 +1,4 @@
-substitutionsid = "6b7be168-390d-4660-b734-bbbb7d03690a"     # Azure for Students
+substitutionsid = "07511652-8939-424c-bedb-5cafb3b61347"     # Azure for Students
 assetname = "team2"
 enviroment = "dev"
 location = "koreacentral" # Location = Korea Central
