@@ -1,4 +1,4 @@
 provider "azurerm" {
     features {}
-    subscription_id = var.substitutionsid
+    #subscription_id = var.substitutionsid
 }
