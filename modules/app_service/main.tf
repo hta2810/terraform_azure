@@ -1,5 +1,5 @@
 resource "azurerm_app_service_plan" "asp" {
-    name = "${var.resource_group_name}-app-service-plan-01"
+    name = "team2-app-service-plan-01"
     resource_group_name = var.resource_group_name
     location = var.location
     sku {
@@ -9,7 +9,7 @@ resource "azurerm_app_service_plan" "asp" {
 }
 
 resource "azurerm_app_service" "as" {
-    name = "${var.resource_group_name}-app-service"
+    name = "team2-app-service-01"
     location = var.location
     resource_group_name = var.resource_group_name
     app_service_plan_id = azurerm_app_service_plan.asp.id
