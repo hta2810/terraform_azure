@@ -12,3 +12,7 @@ module "app_service" {
         "size" = "B1"
     }
 }
+
+
+
+

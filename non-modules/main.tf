@@ -10,7 +10,7 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = ["10.0.0.0/16"]
 }
 resource "azurerm_app_service_plan" "ap" {
-  name                = "${local.resource_name}-ap"
+  name                = "${local.resource_name}-app-plan"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   sku {
@@ -19,7 +19,7 @@ resource "azurerm_app_service_plan" "ap" {
   }
 }
 resource "azurerm_app_service" "webapp" {
-  name                = "${local.resource_name}-ap"
+  name                = "${local.resource_name}-app"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   app_service_plan_id = azurerm_app_service_plan.ap.id
